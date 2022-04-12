@@ -20,26 +20,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ganglongyu.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Organize knowledge here">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ganglong Yu&#39;s Blog">
-<meta property="og:url" content="https://ganglongyu.github.io/index.html">
+    <meta name="description" content="正交曲线坐标系的场论计算  参考：张筑生1990数学分析新讲1_北京大学  直角坐标系 \[\nabla&#x3D;\vec{i}\frac{\partial}{\partial x}+\vec{j}\frac{\partial}{\partial y}+\vec{k}\frac{\partial}{\partial z}\] 曲线坐标系 \[\vec{r}&#x3D;\vec{r}(x,y,z) \R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Field Theory Calculation of Orthogonal Curve Coordinate System">
+<meta property="og:url" content="https://ganglongyu.github.io/2022/04/09/basic_formulas/index.html">
 <meta property="og:site_name" content="Ganglong Yu&#39;s Blog">
-<meta property="og:description" content="Organize knowledge here">
+<meta property="og:description" content="正交曲线坐标系的场论计算  参考：张筑生1990数学分析新讲1_北京大学  直角坐标系 \[\nabla&#x3D;\vec{i}\frac{\partial}{\partial x}+\vec{j}\frac{\partial}{\partial y}+\vec{k}\frac{\partial}{\partial z}\] 曲线坐标系 \[\vec{r}&#x3D;\vec{r}(x,y,z) \R">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-04-09T08:47:45.000Z">
+<meta property="article:modified_time" content="2022-04-10T08:56:53.712Z">
 <meta property="article:author" content="Ganglong Yu">
+<meta property="article:tag" content="tensor">
 <meta property="article:tag" content="fluid mechanism">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://ganglongyu.github.io/">
+<link rel="canonical" href="https://ganglongyu.github.io/2022/04/09/basic_formulas/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://ganglongyu.github.io/2022/04/09/basic_formulas/","path":"2022/04/09/basic_formulas/","title":"Field Theory Calculation of Orthogonal Curve Coordinate System"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Ganglong Yu's Blog</title>
+<title>Field Theory Calculation of Orthogonal Curve Coordinate System | Ganglong Yu's Blog</title>
   
 
 
@@ -69,7 +72,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Ganglong Yu's Blog</h1>
+      <p class="site-title">Ganglong Yu's Blog</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">Stay foolish, stay hungry</p>
@@ -129,7 +132,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -142,6 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E4%BA%A4%E6%9B%B2%E7%BA%BF%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9A%84%E5%9C%BA%E8%AE%BA%E8%AE%A1%E7%AE%97"><span class="nav-number">1.</span> <span class="nav-text">正交曲线坐标系的场论计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B4%E8%A7%92%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">1.1.</span> <span class="nav-text">直角坐标系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E7%BA%BF%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">1.2.</span> <span class="nav-text">曲线坐标系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6"><span class="nav-number">1.2.1.</span> <span class="nav-text">梯度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%A3%E5%BA%A6"><span class="nav-number">1.2.2.</span> <span class="nav-text">散度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%8B%E5%BA%A6"><span class="nav-number">1.2.3.</span> <span class="nav-text">旋度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90"><span class="nav-number">1.2.4.</span> <span class="nav-text">拉普拉斯算子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%B1%E5%9D%90%E6%A0%87"><span class="nav-number">1.2.5.</span> <span class="nav-text">柱坐标</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -208,16 +212,17 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://ganglongyu.github.io/2022/04/09/basic_formulas/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -231,13 +236,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ganglong Yu's Blog">
+      <meta itemprop="name" content="Field Theory Calculation of Orthogonal Curve Coordinate System | Ganglong Yu's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/09/basic_formulas/" class="post-title-link" itemprop="url">Field Theory Calculation of Orthogonal Curve Coordinate System</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Field Theory Calculation of Orthogonal Curve Coordinate System
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -267,7 +272,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="正交曲线坐标系的场论计算">正交曲线坐标系的场论计算</h1>
+        <h1 id="正交曲线坐标系的场论计算">正交曲线坐标系的场论计算</h1>
 <blockquote>
 <p>参考：张筑生1990数学分析新讲1_北京大学</p>
 </blockquote>
@@ -307,7 +312,6 @@
    u_1 &amp;ru_2 &amp;u_3
 \end{vmatrix} \]</span> <span class="math display">\[\Delta u=\frac{1}{r}\frac{\partial}{\partial r}\Big(r\frac{\partial u}{\partial r}\Big)+\frac{1}{r^2}\frac{\partial^2 u}{\partial\theta^2}+\frac{\partial^2 u}{\partial z^2} \]</span></p>
 
-      
     </div>
 
     
@@ -315,11 +319,17 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-tags">
+              <a href="/tags/tensor/" rel="tag"># tensor</a>
+              <a href="/tags/fluid-mechanism/" rel="tag"># fluid mechanism</a>
+          </div>
+
+        
+
     </footer>
   </article>
 </div>
+
 
 
 
