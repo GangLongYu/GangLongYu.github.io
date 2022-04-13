@@ -13,7 +13,10 @@ https://www.cnblogs.com/yyds/p/6992125.html</p>
 <span id="more"></span>
 <h1 id="ssh-connect">SSH connect</h1>
 <h2 id="本地和远程服务器安装ssh-powershell">本地和远程服务器安装ssh (PowerShell)</h2>
-<p>管理员身份运行powershell <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Get-WindowsCapability</span> <span class="literal">-Online</span> | <span class="built_in">Where-Object</span> Name <span class="operator">-like</span> <span class="string">&#x27;OpenSSH*&#x27;</span></span><br></pre></td></tr></table></figure> 若均未安装 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">Name  : OpenSSH.Client~~~~<span class="number">0.0</span>.<span class="number">1.0</span></span><br><span class="line">State : NotPresent</span><br><span class="line"></span><br><span class="line">Name  : OpenSSH.Server~~~~<span class="number">0.0</span>.<span class="number">1.0</span></span><br><span class="line">State : NotPresent</span><br></pre></td></tr></table></figure> 根据需要安装 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Install the OpenSSH Client</span></span><br><span class="line"><span class="built_in">Add-WindowsCapability</span> <span class="literal">-Online</span> <span class="literal">-Name</span> OpenSSH.Client~~~~<span class="number">0.0</span>.<span class="number">1.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Install the OpenSSH Server</span></span><br><span class="line"><span class="built_in">Add-WindowsCapability</span> <span class="literal">-Online</span> <span class="literal">-Name</span> OpenSSH.Server~~~~<span class="number">0.0</span>.<span class="number">1.0</span></span><br></pre></td></tr></table></figure> 两者都会返回以下输出 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">Path          :</span><br><span class="line">Online        : True</span><br><span class="line">RestartNeeded : False</span><br></pre></td></tr></table></figure> ## ssh 密钥登录 ### 在服务器生成公私密钥 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd ~/.ssh</span><br><span class="line">$ ssh-keygen -t rsa -b 4096</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/home/[username]/.ssh/id_rsa): [keyname]</span><br><span class="line">Enter passphrase (empty for no passphrase): [passphrase or directly enter]</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved in test</span><br><span class="line">Your public key has been saved in test.pub</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:[xxxxxx]</span><br><span class="line">The key&#x27;s randomart image is:</span><br><span class="line">+---[RSA 4096]----+</span><br><span class="line">|       ....+o ..O|</span><br><span class="line">|      .  +o... +o|</span><br><span class="line">|     .    =..  .=|</span><br><span class="line">|  . + o  oo... .o|</span><br><span class="line">|   o + *S  *  o  |</span><br><span class="line">|  E   * * o +  . |</span><br><span class="line">|   . . O . . o.. |</span><br><span class="line">|    o o .    ....|</span><br><span class="line">|     .        oo*|</span><br><span class="line">+----[SHA256]-----+</span><br><span class="line"></span><br><span class="line">$ ls</span><br><span class="line">[keyname] [keyname].pub</span><br></pre></td></tr></table></figure></p>
+<p>管理员身份运行powershell <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Get-WindowsCapability</span> <span class="literal">-Online</span> | <span class="built_in">Where-Object</span> Name <span class="operator">-like</span> <span class="string">&#x27;OpenSSH*&#x27;</span></span><br></pre></td></tr></table></figure> 若均未安装 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">Name  : OpenSSH.Client~~~~<span class="number">0.0</span>.<span class="number">1.0</span></span><br><span class="line">State : NotPresent</span><br><span class="line"></span><br><span class="line">Name  : OpenSSH.Server~~~~<span class="number">0.0</span>.<span class="number">1.0</span></span><br><span class="line">State : NotPresent</span><br></pre></td></tr></table></figure> 根据需要安装 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Install the OpenSSH Client</span></span><br><span class="line"><span class="built_in">Add-WindowsCapability</span> <span class="literal">-Online</span> <span class="literal">-Name</span> OpenSSH.Client~~~~<span class="number">0.0</span>.<span class="number">1.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Install the OpenSSH Server</span></span><br><span class="line"><span class="built_in">Add-WindowsCapability</span> <span class="literal">-Online</span> <span class="literal">-Name</span> OpenSSH.Server~~~~<span class="number">0.0</span>.<span class="number">1.0</span></span><br></pre></td></tr></table></figure> 两者都会返回以下输出 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">Path          :</span><br><span class="line">Online        : True</span><br><span class="line">RestartNeeded : False</span><br></pre></td></tr></table></figure></p>
+<h2 id="ssh-密钥登录">ssh 密钥登录</h2>
+<h3 id="在服务器生成公私密钥">在服务器生成公私密钥</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd ~/.ssh</span><br><span class="line">$ ssh-keygen -t rsa -b 4096</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/home/[username]/.ssh/id_rsa): [keyname]</span><br><span class="line">Enter passphrase (empty for no passphrase): [passphrase or directly enter]</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved in test</span><br><span class="line">Your public key has been saved in test.pub</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:[xxxxxx]</span><br><span class="line">The key&#x27;s randomart image is:</span><br><span class="line">+---[RSA 4096]----+</span><br><span class="line">|       ....+o ..O|</span><br><span class="line">|      .  +o... +o|</span><br><span class="line">|     .    =..  .=|</span><br><span class="line">|  . + o  oo... .o|</span><br><span class="line">|   o + *S  *  o  |</span><br><span class="line">|  E   * * o +  . |</span><br><span class="line">|   . . O . . o.. |</span><br><span class="line">|    o o .    ....|</span><br><span class="line">|     .        oo*|</span><br><span class="line">+----[SHA256]-----+</span><br><span class="line"></span><br><span class="line">$ ls</span><br><span class="line">[keyname] [keyname].pub</span><br></pre></td></tr></table></figure>
 <ul>
 <li>注：
 <ul>
@@ -33,8 +36,7 @@ https://www.cnblogs.com/yyds/p/6992125.html</p>
 <li><code>F1</code> =&gt; <code>Remote - SSH: Open SSH Configuration File...</code> =&gt; select file and edit <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Host alias</span><br><span class="line">  HostName [ip]</span><br><span class="line">  User [username]</span><br><span class="line">  Port [port]</span><br><span class="line">  IdentityFile [path of keyname]</span><br></pre></td></tr></table></figure></li>
 <li><code>F1</code> =&gt; <code>Remote - SSH: Connect to Host...</code> =&gt; select platform
 <ul>
-<li>注：若报错<code>ssh: Could not resolve hostname [hostname]: A non-recoverable error occurred during a database lookup.</code><br />
-可能是vscode插件的<code>config</code>文件有问题，目前不知如何解决</li>
+<li>注：若报错<code>ssh: Could not resolve hostname [hostname]: A non-recoverable error occurred during a database lookup.</code>， vscode插件的<code>config</code>文件有问题</li>
 </ul></li>
 <li>在远程ssh端安装需要的vscode插件</li>
 </ul>
@@ -47,8 +49,47 @@ https://www.cnblogs.com/yyds/p/6992125.html</p>
       </tags>
   </entry>
   <entry>
+    <title>Latex Tips</title>
+    <url>/2022/04/13/latex-tips/</url>
+    <content><![CDATA[<p>整理一些好用的latex排版技巧 <span id="more"></span></p>
+<h1 id="排版python代码">排版python代码</h1>
+<p>参考链接</p>
+<blockquote>
+<p>https://www.zhihu.com/question/65508676/answer/232267619</p>
+</blockquote>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>&#123;listings, xcolor&#125;</span><br><span class="line"><span class="keyword">\lstdefinestyle</span>&#123;lfonts&#125;&#123;</span><br><span class="line">  basicstyle   = <span class="keyword">\footnotesize</span><span class="keyword">\ttfamily</span>,</span><br><span class="line">  stringstyle  = <span class="keyword">\color</span>&#123;purple&#125;,</span><br><span class="line">  keywordstyle = <span class="keyword">\color</span>&#123;blue!60!black&#125;<span class="keyword">\bfseries</span>,</span><br><span class="line">  commentstyle = <span class="keyword">\color</span>&#123;olive&#125;<span class="keyword">\scshape</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">\lstdefinestyle</span>&#123;lnumbers&#125;&#123;</span><br><span class="line">  numbers     = left,</span><br><span class="line">  numberstyle = <span class="keyword">\tiny</span>,</span><br><span class="line">  numbersep   = 1em,</span><br><span class="line">  firstnumber = 1,</span><br><span class="line">  stepnumber  = 1,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">\lstdefinestyle</span>&#123;llayout&#125;&#123;</span><br><span class="line">  breaklines       = true,</span><br><span class="line">  tabsize          = 2,</span><br><span class="line">  columns          = flexible,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">\lstdefinestyle</span>&#123;lgeometry&#125;&#123;</span><br><span class="line">  xleftmargin      = 20pt,</span><br><span class="line">  xrightmargin     = 0pt,</span><br><span class="line">  frame            = tb,</span><br><span class="line">  framesep         = <span class="keyword">\fboxsep</span>,</span><br><span class="line">  framexleftmargin = 20pt,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">\lstdefinestyle</span>&#123;lgeneral&#125;&#123;</span><br><span class="line">  style = lfonts,</span><br><span class="line">  style = lnumbers,</span><br><span class="line">  style = llayout,</span><br><span class="line">  style = lgeometry,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">\lstdefinestyle</span>&#123;python&#125;&#123;</span><br><span class="line">  language = &#123;Python&#125;,</span><br><span class="line">  style    = lgeneral,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;lstlisting&#125;[style = python]</span><br><span class="line">for x in range(10):</span><br><span class="line">    pass</span><br><span class="line"><span class="keyword">\end</span>&#123;lstlisting&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>code</tag>
+        <tag>latex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux Commands</title>
+    <url>/2022/04/13/linux-commands/</url>
+    <content><![CDATA[<p>整理了一些用到的比较好用的linux命令 <span id="more"></span></p>
+<h1 id="后台运行">后台运行</h1>
+<h2 id="后台运行保存运行日志">后台运行，保存运行日志</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nohup [your command] &lt;/dev/null &gt;logfile 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>nohup</code> 挂起命令<code>[your command]</code>在后台运行，不会被<code>ctrl C</code>终止</li>
+<li><code>&lt;dev/null</code> 标准输入设为空</li>
+<li><code>&gt;logfile</code> 标准输出重定向到文件<code>logfile</code></li>
+<li><code>2&gt;&amp;1</code> 标准错误输出重定向到标准输出，会一起保存在<code>logfile</code></li>
+</ul>
+<h2 id="查看日志">查看日志</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ tail -f logfile</span><br></pre></td></tr></table></figure>
+<h2 id="查看和终止后台进程">查看和终止后台进程</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ps -aux | grep [search content]</span><br><span class="line">$ kill -9 [process id]</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>code</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Field Theory Calculation of Orthogonal Curve Coordinate System</title>
-    <url>/2022/04/09/basic-formulas/</url>
+    <url>/2022/04/09/field-theory-calculation/</url>
     <content><![CDATA[<h1 id="正交曲线坐标系的场论计算">正交曲线坐标系的场论计算</h1>
 <blockquote>
 <p>参考：张筑生1990数学分析新讲1_北京大学</p>
