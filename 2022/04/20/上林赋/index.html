@@ -20,29 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ganglongyu.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="整理了一些用到的比较好用的linux命令">
+    <meta name="description" content="看电视剧《一生一世》，很喜欢男女主这样和谐的相处方式，就像喜欢CLANNAD一样，很甜很美好。但现实中的自己却是差劲的多，还需修身养性。 同时剧里也有许多词句，又让我想到一个很喜欢的小说叫《穷鬼的上下两千年》。人会自然追求美，文学之美，音乐之美，图画之美，这样的美使人久久愉悦，远超于平常消遣。 由文字的美又会想到林奕含的那个访谈，“她恍然觉得不是学文学的人，而是文学辜负了她们”。 不论如何，我还是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux Commands">
-<meta property="og:url" content="https://ganglongyu.github.io/2022/04/13/linux-commands/index.html">
+<meta property="og:title" content="上林赋">
+<meta property="og:url" content="https://ganglongyu.github.io/2022/04/20/%E4%B8%8A%E6%9E%97%E8%B5%8B/index.html">
 <meta property="og:site_name" content="Ganglong Yu&#39;s Blog">
-<meta property="og:description" content="整理了一些用到的比较好用的linux命令">
+<meta property="og:description" content="看电视剧《一生一世》，很喜欢男女主这样和谐的相处方式，就像喜欢CLANNAD一样，很甜很美好。但现实中的自己却是差劲的多，还需修身养性。 同时剧里也有许多词句，又让我想到一个很喜欢的小说叫《穷鬼的上下两千年》。人会自然追求美，文学之美，音乐之美，图画之美，这样的美使人久久愉悦，远超于平常消遣。 由文字的美又会想到林奕含的那个访谈，“她恍然觉得不是学文学的人，而是文学辜负了她们”。 不论如何，我还是">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-04-13T13:29:29.000Z">
-<meta property="article:modified_time" content="2022-04-14T09:50:46.805Z">
+<meta property="article:published_time" content="2022-04-20T08:46:14.000Z">
+<meta property="article:modified_time" content="2022-04-22T06:55:37.865Z">
 <meta property="article:author" content="Ganglong Yu">
-<meta property="article:tag" content="code">
-<meta property="article:tag" content="linux">
+<meta property="article:tag" content="文">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://ganglongyu.github.io/2022/04/13/linux-commands/">
+<link rel="canonical" href="https://ganglongyu.github.io/2022/04/20/%E4%B8%8A%E6%9E%97%E8%B5%8B/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://ganglongyu.github.io/2022/04/13/linux-commands/","path":"2022/04/13/linux-commands/","title":"Linux Commands"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://ganglongyu.github.io/2022/04/20/%E4%B8%8A%E6%9E%97%E8%B5%8B/","path":"2022/04/20/上林赋/","title":"上林赋"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Linux Commands | Ganglong Yu's Blog</title>
+<title>上林赋 | Ganglong Yu's Blog</title>
   
 
 
@@ -145,7 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C"><span class="nav-number">1.</span> <span class="nav-text">后台运行</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E4%BF%9D%E5%AD%98%E8%BF%90%E8%A1%8C%E6%97%A5%E5%BF%97"><span class="nav-number">1.1.</span> <span class="nav-text">后台运行，保存运行日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97"><span class="nav-number">1.2.</span> <span class="nav-text">查看日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%92%8C%E7%BB%88%E6%AD%A2%E5%90%8E%E5%8F%B0%E8%BF%9B%E7%A8%8B"><span class="nav-number">1.3.</span> <span class="nav-text">查看和终止后台进程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E6%96%87%E4%BB%B6%E4%BF%A1%E6%81%AF"><span class="nav-number">2.</span> <span class="nav-text">查看文件夹内文件信息</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8A%E6%9E%97%E8%B5%8B-%E5%8F%B8%E9%A9%AC%E7%9B%B8%E5%A6%82"><span class="nav-number">1.</span> <span class="nav-text">上林赋 司马相如</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E7%94%9F%E4%B8%80%E4%B8%96-%E7%94%B5%E8%A7%86%E5%89%A7"><span class="nav-number">2.</span> <span class="nav-text">一生一世 电视剧</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%A4%E6%B1%82%E5%87%B0-%E5%8F%B8%E9%A9%AC%E7%9B%B8%E5%A6%82"><span class="nav-number">3.</span> <span class="nav-text">凤求凰 司马相如</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%B2%E8%AE%B0%E5%8F%B8%E9%A9%AC%E7%9B%B8%E5%A6%82%E5%88%97%E4%BC%A0"><span class="nav-number">4.</span> <span class="nav-text">史记·司马相如列传</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -223,7 +222,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://ganglongyu.github.io/2022/04/13/linux-commands/">
+    <link itemprop="mainEntityOfPage" href="https://ganglongyu.github.io/2022/04/20/%E4%B8%8A%E6%9E%97%E8%B5%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.jpg">
@@ -236,12 +235,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Linux Commands | Ganglong Yu's Blog">
+      <meta itemprop="name" content="上林赋 | Ganglong Yu's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Linux Commands
+          上林赋
         </h1>
 
         <div class="post-meta-container">
@@ -252,14 +251,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2022-04-13 21:29:29" itemprop="dateCreated datePublished" datetime="2022-04-13T21:29:29+08:00">2022-04-13</time>
+      <time title="Created: 2022-04-20 16:46:14" itemprop="dateCreated datePublished" datetime="2022-04-20T16:46:14+08:00">2022-04-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-04-14 17:50:46" itemprop="dateModified" datetime="2022-04-14T17:50:46+08:00">2022-04-14</time>
+      <time title="Modified: 2022-04-22 14:55:37" itemprop="dateModified" datetime="2022-04-22T14:55:37+08:00">2022-04-22</time>
     </span>
 
   
@@ -272,27 +271,56 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>整理了一些用到的比较好用的linux命令 <span id="more"></span></p>
-<h1 id="后台运行">后台运行</h1>
-<h2 id="后台运行保存运行日志">后台运行，保存运行日志</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nohup [your command] &lt;/dev/null &gt;logfile 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>nohup</code> 挂起命令<code>[your command]</code>在后台运行，不会被<code>ctrl C</code>终止</li>
-<li><code>&lt;dev/null</code> 标准输入设为空</li>
-<li><code>&gt;logfile</code> 标准输出重定向到文件<code>logfile</code></li>
-<li><code>2&gt;&amp;1</code> 标准错误输出重定向到标准输出，会一起保存在<code>logfile</code></li>
-</ul>
-<h2 id="查看日志">查看日志</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tail -f logfile</span><br></pre></td></tr></table></figure>
-<h2 id="查看和终止后台进程">查看和终止后台进程</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ps -aux | grep [search content]</span><br><span class="line">$ kill -9 [process id]</span><br></pre></td></tr></table></figure>
-<h1 id="查看文件夹内文件信息">查看文件夹内文件信息</h1>
-<ul>
-<li>当前目录下文件数量（不包括子目录中的文件） <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ls -l | grep &quot;_&quot; | wc -l</span><br></pre></td></tr></table></figure></li>
-<li>当前目录下以<code>aabb</code>开头的文件数量（不包括子目录中的文件） <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ls -l aabb* | grep &quot;_&quot; | wc -l</span><br></pre></td></tr></table></figure></li>
-<li>当前目录下文件数量（包括子目录中的文件） <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ls -lR | grep &quot;_&quot; | wc -l</span><br></pre></td></tr></table></figure></li>
-<li>当前目录下文件夹数量（不包括子目录中的文件夹） <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ls -l | grep &quot;d&quot; | wc -l</span><br></pre></td></tr></table></figure></li>
-</ul>
+        <p>看电视剧《一生一世》，很喜欢男女主这样和谐的相处方式，就像喜欢CLANNAD一样，很甜很美好。但现实中的自己却是差劲的多，还需修身养性。 同时剧里也有许多词句，又让我想到一个很喜欢的小说叫《穷鬼的上下两千年》。人会自然追求美，文学之美，音乐之美，图画之美，这样的美使人久久愉悦，远超于平常消遣。 由文字的美又会想到林奕含的那个访谈，“<em>她恍然觉得不是学文学的人，而是文学辜负了她们</em>”。 不论如何，我还是愿意静下心来体会这文学。《一生一世》多次提到司马相如的《上林赋》，那便由此开始吧。</p>
+<p>参考：</p>
+<blockquote>
+<p>费振刚2011司马相如文选译_凤凰出版社<br />
+https://www.bilibili.com/video/BV1yW411L72D<br />
+https://hanyu.baidu.com/shici/detail?pid=ecb82707a98c418995c5a0c50b770af0</p>
+</blockquote>
+<span id="more"></span>
+<h1 id="上林赋-司马相如">上林赋 司马相如</h1>
+<p><font face="千图笔锋手写体" size=5></p>
+<blockquote>
+<p>色授魂与，心愉于侧</p>
+</blockquote>
+<p></font></p>
+<h1 id="一生一世-电视剧">一生一世 电视剧</h1>
+<p><font face="千图笔锋手写体" size=5></p>
+<blockquote>
+<p>女以色授，男以魂与，情投意合，心倾于侧。</p>
+</blockquote>
+<blockquote>
+<p>美人骨，世间罕见。有骨者，而未有皮，有皮者，而未有骨。然，世人大多眼孔浅显，只见皮相，未见骨相。</p>
+</blockquote>
+<p></font></p>
+<h1 id="凤求凰-司马相如">凤求凰 司马相如</h1>
+<p><font face="千图笔锋手写体" size=5></p>
+<blockquote>
+<p>有一美人兮，见之不忘。<br />
+一日不见兮，思之如狂。<br />
+凤飞翱翔兮，四海求凰。<br />
+无奈佳人兮，不在东墙。<br />
+将琴代语兮，聊写衷肠。<br />
+何日见许兮，慰我彷徨。<br />
+愿言配德兮，携手相将。<br />
+不得於飞兮，使我沦亡。<br />
+凤兮凤兮归故乡，遨游四海求其凰。<br />
+时未遇兮无所将，何悟今兮升斯堂。<br />
+有艳淑女在闺房，室迩人遐毒我肠。<br />
+何缘交颈为鸳鸯，胡颉颃兮共翱翔。<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a><br />
+凰兮凰兮从我栖，得托孳尾永为妃。<br />
+交情通意心和谐，中夜相从知者谁？<br />
+双翼俱起翻高飞，无感我思使余悲。</p>
+</blockquote>
+<p></font></p>
+<h1 id="史记司马相如列传">史记·司马相如列传</h1>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>颉颃：xié háng，鸟上下飞。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
     </div>
 
@@ -302,21 +330,20 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/code/" rel="tag"># code</a>
-              <a href="/tags/linux/" rel="tag"># linux</a>
+              <a href="/tags/%E6%96%87/" rel="tag"># 文</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/04/12/SSH-connect/" rel="prev" title="VSCode -- Remote Development using SSH">
-                  <i class="fa fa-chevron-left"></i> VSCode -- Remote Development using SSH
+                <a href="/2022/04/13/latex-tips/" rel="prev" title="Latex Tips">
+                  <i class="fa fa-chevron-left"></i> Latex Tips
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/04/13/latex-tips/" rel="next" title="Latex Tips">
-                  Latex Tips <i class="fa fa-chevron-right"></i>
+                <a href="/2022/04/22/%E5%8F%B8%E9%A9%AC%E7%9B%B8%E5%A6%82-%E5%8D%93%E6%96%87%E5%90%9B/" rel="next" title="司马相如与卓文君">
+                  司马相如与卓文君 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
