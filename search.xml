@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Field Theory Calculation of Orthogonal Curve Coordinate System</title>
+    <url>/2022/04/09/field-theory-calculation/</url>
+    <content><![CDATA[<h1 id="正交曲线坐标系的场论计算">正交曲线坐标系的场论计算</h1>
+<blockquote>
+<p>参考：张筑生1990数学分析新讲1_北京大学</p>
+</blockquote>
+<h2 id="直角坐标系">直角坐标系</h2>
+<p><span class="math display">\[\nabla=\vec{i}\frac{\partial}{\partial x}+\vec{j}\frac{\partial}{\partial y}+\vec{k}\frac{\partial}{\partial z}\]</span></p>
+<h2 id="曲线坐标系">曲线坐标系</h2>
+<p><span class="math display">\[\vec{r}=\vec{r}(x,y,z) \Rightarrow \vec{r}=\vec{r}(q_1,q_2,q_3)\]</span> <span class="math display">\[d\vec{r}=\frac{\partial\vec{r}}{\partial q_1}dq_1+\frac{\partial\vec{r}}{\partial q_2}dq_2+\frac{\partial\vec{r}}{\partial q_3}dq_3\]</span> 各坐标切向量 <span class="math display">\[\frac{\partial\vec{r}}{\partial q_1},\qquad \frac{\partial\vec{r}}{\partial q_2},\qquad \frac{\partial\vec{r}}{\partial q_3}\]</span> Lam<span class="math inline">\(\acute{\rm{e}}\)</span>系数 <span class="math display">\[h_i=\Big\|\frac{\partial\vec{r}}{\partial q_i}\Big\|=\sqrt{\Big(\frac{\partial x}{\partial q_i}\Big)^2+(\frac{\partial y}{\partial q_i}\Big)^2+(\frac{\partial z}{\partial q_i}\Big)^2},\qquad i=1,2,3\]</span> 正交曲线坐标系：柱坐标、球坐标，规范正交基底 <span class="math display">\[\vec{e}_i=\frac{1}{h_i}\frac{\partial\vec{r}}{\partial q_i},\qquad i=1,2,3\]</span> <span class="math display">\[\vec{e}_i\cdot\vec{e}_j=\delta_{ij}\]</span></p>
+<h3 id="梯度">梯度</h3>
+<p><span class="math display">\[d\vec{r}=h_1dq_1\vec{e}_1+h_2dq_2\vec{e}_2+h_3dq_3\vec{e}_3\]</span> <span class="math display">\[\nabla u=\lambda_1\vec{e}_1+\lambda_2\vec{e}_2+\lambda_3\vec{e}_3\]</span> <span class="math display">\[\nabla u\cdot d\vec{r}=\lambda_1h_1dq_1+\lambda_2h_2dq_2+\lambda_3h_3dq_3\]</span> <span class="math display">\[\nabla u\cdot d\vec{r}=du=\frac{\partial u}{\partial q_1}dq_1+\frac{\partial u}{\partial q_2}dq_2+\frac{\partial u}{\partial q_3}dq_3\]</span> <span class="math display">\[\Rightarrow\lambda_i=\frac{1}{h_i}\frac{\partial u}{\partial q_i},\qquad i=1,2,3\]</span> <span class="math display">\[\Rightarrow\nabla u=\frac{1}{h_1}\frac{\partial u}{\partial q_1}\vec{e}_1+\frac{1}{h_2}\frac{\partial u}{\partial q_2}\vec{e}_2+\frac{1}{h_3}\frac{\partial u}{\partial q_3}\vec{e}_3\]</span></p>
+<h3 id="散度">散度</h3>
+<p>由梯度公式有 <span class="math display">\[\nabla q_i=\frac{1}{h_i}\vec{e}_i,\qquad i=1,2,3\]</span> <span class="math display">\[\begin{aligned}
+\nabla\cdot\Big(\frac{\vec{e}_1}{h_2h_3}\Big)&amp;=\nabla\cdot\Big(\frac{\vec{e}_2}{h_2}\times\frac{\vec{e}_3}{h_3}\Big)=\nabla\cdot(\nabla q_2\times\nabla q_3)\\
+&amp;=(\nabla\times\nabla q_2)\cdot\nabla q_3-(\nabla\times\nabla q_3)\cdot\nabla q_2=0
+\end{aligned}\]</span> <span class="math display">\[\Rightarrow\nabla\cdot\Big(\frac{\vec{e}_2}{h_3h_1}\Big)=0,\qquad\nabla\cdot\Big(\frac{\vec{e}_3}{h_1h_2}\Big)=0\]</span> <span class="math display">\[\vec{u}=u_1\vec{e}_1+u_2\vec{e}_2+u_3\vec{e}_3=u_1h_2h_3\Big(\frac{\vec{e}_1}{h_2h_3}\Big)+u_2h_3h_1\Big(\frac{\vec{e}_2}{h_3h_1}\Big)+u_3h_1h_2\Big(\frac{\vec{e}_3}{h_1h_2}\Big)\]</span> <span class="math display">\[\begin{aligned}
+\nabla\cdot\vec{u}&amp;=\nabla(u_1h_2h_3)\cdot\Big(\frac{\vec{e}_1}{h_2h_3}\Big)+\nabla(u_2h_1h_1)\cdot\Big(\frac{\vec{e}_2}{h_3h_1}\Big)+\nabla(u_3h_1h_2)\cdot\Big(\frac{\vec{e}_3}{h_1h_2}\Big)\\
+&amp;=\frac{1}{h_1h_2h_3}\Big[\frac{\partial}{\partial q_1}(u_1h_2h_3)+\frac{\partial}{\partial q_2}(u_2h_3h_1)+\frac{\partial}{\partial q_3}(u_3h_1h_2)\Big]
+\end{aligned}\]</span></p>
+<h3 id="旋度">旋度</h3>
+<p><span class="math display">\[\nabla\times\Big(\frac{\vec{e}_i}{h_i}\Big)=\nabla\times\nabla q_i=0,\qquad i=1,2,3 \]</span> <span class="math display">\[\vec{u}=\sum_{i=1}^3u_i\vec{e}_i=\sum_{i=1}^3u_ih_i\Big(\frac{\vec{e}_i}{h_i}\Big) \]</span> <span class="math display">\[\nabla\times\vec{u}=\sum_{i=1}^3\nabla(u_ih_i)\times\Big(\frac{\vec{e}_i}{h_i}\Big)=\frac{1}{h_1h_2h_3}\begin{vmatrix}
+   h_1\vec{e}_1 &amp;h_2\vec{e}_2 &amp;h_3\vec{e}_3\\
+   \frac{\partial}{\partial q_1} &amp;\frac{\partial}{\partial q_2} &amp;\frac{\partial}{\partial q_3}\\
+   h_1u_1 &amp;h_2u_2 &amp;h_3u_3  
+\end{vmatrix} \]</span></p>
+<h3 id="拉普拉斯算子">拉普拉斯算子</h3>
+<p>直角坐标系 <span class="math display">\[\Delta=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2},\qquad \Delta u=\nabla\cdot(\nabla u) \]</span> 正交曲线坐标系 <span class="math display">\[\begin{aligned}
+\Delta u&amp;=\frac{1}{h_1h_2h_3}\Big[\frac{\partial}{\partial q_1}\Big(\frac{h_2h_3}{h_1}\frac{\partial u}{\partial q_1}\Big)+\frac{\partial}{\partial q_2}\Big(\frac{h_3h_1}{h_2}\frac{\partial u}{\partial q_2}\Big)+\frac{\partial}{\partial q_3}\Big(\frac{h_1h_2}{h_3}\frac{\partial u}{\partial q_3}\Big)\Big] \\
+&amp;=\frac{1}{h_1h_2h_3}\sum_{i=1}^3\frac{\partial}{\partial q_i}\Big(\frac{h_1h_2h_3}{h_i^2}\frac{\partial u}{\partial q_i}\Big)
+\end{aligned}\]</span></p>
+<h3 id="柱坐标">柱坐标</h3>
+<p><span class="math display">\[\vec{r}(x,y,z)\Rightarrow\vec{r}(r,\theta,z)\qquad\left\{\begin{aligned}
+   x&amp;=r\cos\theta\\
+   y&amp;=r\sin\theta\\
+   z&amp;=z
+\end{aligned}\right.\]</span> <span class="math display">\[h_1=1,\qquad h_2=r,\qquad h_3=1 \]</span> <span class="math display">\[\nabla u=\frac{\partial u}{\partial r}\vec{e}_r+\frac{1}{r}\frac{\partial u}{\partial\theta}\vec{e}_{\theta}+\frac{\partial u}{\partial z}\vec{e}_z \]</span> <span class="math display">\[\nabla\cdot\vec{u}=\frac{1}{r}\frac{\partial}{\partial r}(ru_1)+\frac{1}{r}\frac{\partial u_2}{\partial\theta}+\frac{\partial u_3}{\partial z} \]</span> <span class="math display">\[\nabla\times\vec{u}=\frac{1}{r}\begin{vmatrix}
+   \vec{e}_r &amp;r\vec{e}_{\theta} &amp;\vec{e}_z\\
+   \frac{\partial}{\partial r} &amp;\frac{\partial}{\partial\theta} &amp;\frac{\partial}{\partial z}\\
+   u_1 &amp;ru_2 &amp;u_3
+\end{vmatrix} \]</span> <span class="math display">\[\Delta u=\frac{1}{r}\frac{\partial}{\partial r}\Big(r\frac{\partial u}{\partial r}\Big)+\frac{1}{r^2}\frac{\partial^2 u}{\partial\theta^2}+\frac{\partial^2 u}{\partial z^2} \]</span></p>
+]]></content>
+      <tags>
+        <tag>tensor</tag>
+        <tag>fluid mechanism</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>VSCode -- Remote Development using SSH</title>
     <url>/2022/04/12/SSH-connect/</url>
     <content><![CDATA[<p>用ssh远程连接服务器运行代码，虽然vim编辑能力很强大，加上各种配置和插件用起来也不错，但总归比不上vscode。 vscode也可以用vim的方式编辑，高亮、智能补全、调试等功能更加强大，是非常完美的编辑器了。 所以希望通过远程连接插件，利用服务器性能的同时，实现便捷的本地vscode编辑。</p>
@@ -65,54 +113,6 @@ https://www.cnblogs.com/yyds/p/6992125.html</p>
       </tags>
   </entry>
   <entry>
-    <title>Field Theory Calculation of Orthogonal Curve Coordinate System</title>
-    <url>/2022/04/09/field-theory-calculation/</url>
-    <content><![CDATA[<h1 id="正交曲线坐标系的场论计算">正交曲线坐标系的场论计算</h1>
-<blockquote>
-<p>参考：张筑生1990数学分析新讲1_北京大学</p>
-</blockquote>
-<h2 id="直角坐标系">直角坐标系</h2>
-<p><span class="math display">\[\nabla=\vec{i}\frac{\partial}{\partial x}+\vec{j}\frac{\partial}{\partial y}+\vec{k}\frac{\partial}{\partial z}\]</span></p>
-<h2 id="曲线坐标系">曲线坐标系</h2>
-<p><span class="math display">\[\vec{r}=\vec{r}(x,y,z) \Rightarrow \vec{r}=\vec{r}(q_1,q_2,q_3)\]</span> <span class="math display">\[d\vec{r}=\frac{\partial\vec{r}}{\partial q_1}dq_1+\frac{\partial\vec{r}}{\partial q_2}dq_2+\frac{\partial\vec{r}}{\partial q_3}dq_3\]</span> 各坐标切向量 <span class="math display">\[\frac{\partial\vec{r}}{\partial q_1},\qquad \frac{\partial\vec{r}}{\partial q_2},\qquad \frac{\partial\vec{r}}{\partial q_3}\]</span> Lam<span class="math inline">\(\acute{\rm{e}}\)</span>系数 <span class="math display">\[h_i=\Big\|\frac{\partial\vec{r}}{\partial q_i}\Big\|=\sqrt{\Big(\frac{\partial x}{\partial q_i}\Big)^2+(\frac{\partial y}{\partial q_i}\Big)^2+(\frac{\partial z}{\partial q_i}\Big)^2},\qquad i=1,2,3\]</span> 正交曲线坐标系：柱坐标、球坐标，规范正交基底 <span class="math display">\[\vec{e}_i=\frac{1}{h_i}\frac{\partial\vec{r}}{\partial q_i},\qquad i=1,2,3\]</span> <span class="math display">\[\vec{e}_i\cdot\vec{e}_j=\delta_{ij}\]</span></p>
-<h3 id="梯度">梯度</h3>
-<p><span class="math display">\[d\vec{r}=h_1dq_1\vec{e}_1+h_2dq_2\vec{e}_2+h_3dq_3\vec{e}_3\]</span> <span class="math display">\[\nabla u=\lambda_1\vec{e}_1+\lambda_2\vec{e}_2+\lambda_3\vec{e}_3\]</span> <span class="math display">\[\nabla u\cdot d\vec{r}=\lambda_1h_1dq_1+\lambda_2h_2dq_2+\lambda_3h_3dq_3\]</span> <span class="math display">\[\nabla u\cdot d\vec{r}=du=\frac{\partial u}{\partial q_1}dq_1+\frac{\partial u}{\partial q_2}dq_2+\frac{\partial u}{\partial q_3}dq_3\]</span> <span class="math display">\[\Rightarrow\lambda_i=\frac{1}{h_i}\frac{\partial u}{\partial q_i},\qquad i=1,2,3\]</span> <span class="math display">\[\Rightarrow\nabla u=\frac{1}{h_1}\frac{\partial u}{\partial q_1}\vec{e}_1+\frac{1}{h_2}\frac{\partial u}{\partial q_2}\vec{e}_2+\frac{1}{h_3}\frac{\partial u}{\partial q_3}\vec{e}_3\]</span></p>
-<h3 id="散度">散度</h3>
-<p>由梯度公式有 <span class="math display">\[\nabla q_i=\frac{1}{h_i}\vec{e}_i,\qquad i=1,2,3\]</span> <span class="math display">\[\begin{aligned}
-\nabla\cdot\Big(\frac{\vec{e}_1}{h_2h_3}\Big)&amp;=\nabla\cdot\Big(\frac{\vec{e}_2}{h_2}\times\frac{\vec{e}_3}{h_3}\Big)=\nabla\cdot(\nabla q_2\times\nabla q_3)\\
-&amp;=(\nabla\times\nabla q_2)\cdot\nabla q_3-(\nabla\times\nabla q_3)\cdot\nabla q_2=0
-\end{aligned}\]</span> <span class="math display">\[\Rightarrow\nabla\cdot\Big(\frac{\vec{e}_2}{h_3h_1}\Big)=0,\qquad\nabla\cdot\Big(\frac{\vec{e}_3}{h_1h_2}\Big)=0\]</span> <span class="math display">\[\vec{u}=u_1\vec{e}_1+u_2\vec{e}_2+u_3\vec{e}_3=u_1h_2h_3\Big(\frac{\vec{e}_1}{h_2h_3}\Big)+u_2h_3h_1\Big(\frac{\vec{e}_2}{h_3h_1}\Big)+u_3h_1h_2\Big(\frac{\vec{e}_3}{h_1h_2}\Big)\]</span> <span class="math display">\[\begin{aligned}
-\nabla\cdot\vec{u}&amp;=\nabla(u_1h_2h_3)\cdot\Big(\frac{\vec{e}_1}{h_2h_3}\Big)+\nabla(u_2h_1h_1)\cdot\Big(\frac{\vec{e}_2}{h_3h_1}\Big)+\nabla(u_3h_1h_2)\cdot\Big(\frac{\vec{e}_3}{h_1h_2}\Big)\\
-&amp;=\frac{1}{h_1h_2h_3}\Big[\frac{\partial}{\partial q_1}(u_1h_2h_3)+\frac{\partial}{\partial q_2}(u_2h_3h_1)+\frac{\partial}{\partial q_3}(u_3h_1h_2)\Big]
-\end{aligned}\]</span></p>
-<h3 id="旋度">旋度</h3>
-<p><span class="math display">\[\nabla\times\Big(\frac{\vec{e}_i}{h_i}\Big)=\nabla\times\nabla q_i=0,\qquad i=1,2,3 \]</span> <span class="math display">\[\vec{u}=\sum_{i=1}^3u_i\vec{e}_i=\sum_{i=1}^3u_ih_i\Big(\frac{\vec{e}_i}{h_i}\Big) \]</span> <span class="math display">\[\nabla\times\vec{u}=\sum_{i=1}^3\nabla(u_ih_i)\times\Big(\frac{\vec{e}_i}{h_i}\Big)=\frac{1}{h_1h_2h_3}\begin{vmatrix}
-   h_1\vec{e}_1 &amp;h_2\vec{e}_2 &amp;h_3\vec{e}_3\\
-   \frac{\partial}{\partial q_1} &amp;\frac{\partial}{\partial q_2} &amp;\frac{\partial}{\partial q_3}\\
-   h_1u_1 &amp;h_2u_2 &amp;h_3u_3  
-\end{vmatrix} \]</span></p>
-<h3 id="拉普拉斯算子">拉普拉斯算子</h3>
-<p>直角坐标系 <span class="math display">\[\Delta=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2},\qquad \Delta u=\nabla\cdot(\nabla u) \]</span> 正交曲线坐标系 <span class="math display">\[\begin{aligned}
-\Delta u&amp;=\frac{1}{h_1h_2h_3}\Big[\frac{\partial}{\partial q_1}\Big(\frac{h_2h_3}{h_1}\frac{\partial u}{\partial q_1}\Big)+\frac{\partial}{\partial q_2}\Big(\frac{h_3h_1}{h_2}\frac{\partial u}{\partial q_2}\Big)+\frac{\partial}{\partial q_3}\Big(\frac{h_1h_2}{h_3}\frac{\partial u}{\partial q_3}\Big)\Big] \\
-&amp;=\frac{1}{h_1h_2h_3}\sum_{i=1}^3\frac{\partial}{\partial q_i}\Big(\frac{h_1h_2h_3}{h_i^2}\frac{\partial u}{\partial q_i}\Big)
-\end{aligned}\]</span></p>
-<h3 id="柱坐标">柱坐标</h3>
-<p><span class="math display">\[\vec{r}(x,y,z)\Rightarrow\vec{r}(r,\theta,z)\qquad\left\{\begin{aligned}
-   x&amp;=r\cos\theta\\
-   y&amp;=r\sin\theta\\
-   z&amp;=z
-\end{aligned}\right.\]</span> <span class="math display">\[h_1=1,\qquad h_2=r,\qquad h_3=1 \]</span> <span class="math display">\[\nabla u=\frac{\partial u}{\partial r}\vec{e}_r+\frac{1}{r}\frac{\partial u}{\partial\theta}\vec{e}_{\theta}+\frac{\partial u}{\partial z}\vec{e}_z \]</span> <span class="math display">\[\nabla\cdot\vec{u}=\frac{1}{r}\frac{\partial}{\partial r}(ru_1)+\frac{1}{r}\frac{\partial u_2}{\partial\theta}+\frac{\partial u_3}{\partial z} \]</span> <span class="math display">\[\nabla\times\vec{u}=\frac{1}{r}\begin{vmatrix}
-   \vec{e}_r &amp;r\vec{e}_{\theta} &amp;\vec{e}_z\\
-   \frac{\partial}{\partial r} &amp;\frac{\partial}{\partial\theta} &amp;\frac{\partial}{\partial z}\\
-   u_1 &amp;ru_2 &amp;u_3
-\end{vmatrix} \]</span> <span class="math display">\[\Delta u=\frac{1}{r}\frac{\partial}{\partial r}\Big(r\frac{\partial u}{\partial r}\Big)+\frac{1}{r^2}\frac{\partial^2 u}{\partial\theta^2}+\frac{\partial^2 u}{\partial z^2} \]</span></p>
-]]></content>
-      <tags>
-        <tag>tensor</tag>
-        <tag>fluid mechanism</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux Commands</title>
     <url>/2022/04/13/linux-commands/</url>
     <content><![CDATA[<p>整理了一些用到的比较好用的linux命令 <span id="more"></span></p>
@@ -168,33 +168,6 @@ https://hanyu.baidu.com/shici/detail?pid=ecb82707a98c418995c5a0c50b770af0</p>
 <p>美人骨，世间罕见。有骨者，而未有皮，有皮者，而未有骨。然，世人大多眼孔浅显，只见皮相，未见骨相。</p>
 </blockquote>
 <p></font></p>
-<h1 id="凤求凰-司马相如">凤求凰 司马相如</h1>
-<p><font face="千图笔锋手写体" size=5></p>
-<blockquote>
-<p>有一美人兮，见之不忘。<br />
-一日不见兮，思之如狂。<br />
-凤飞翱翔兮，四海求凰。<br />
-无奈佳人兮，不在东墙。<br />
-将琴代语兮，聊写衷肠。<br />
-何日见许兮，慰我彷徨。<br />
-愿言配德兮，携手相将。<br />
-不得於飞兮，使我沦亡。<br />
-凤兮凤兮归故乡，遨游四海求其凰。<br />
-时未遇兮无所将，何悟今兮升斯堂。<br />
-有艳淑女在闺房，室迩人遐毒我肠。<br />
-何缘交颈为鸳鸯，胡颉颃兮共翱翔。<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a><br />
-凰兮凰兮从我栖，得托孳尾永为妃。<br />
-交情通意心和谐，中夜相从知者谁？<br />
-双翼俱起翻高飞，无感我思使余悲。</p>
-</blockquote>
-<p></font></p>
-<h1 id="史记司马相如列传">史记·司马相如列传</h1>
-<section class="footnotes" role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1" role="doc-endnote"><p>颉颃：xié háng，鸟上下飞。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
 ]]></content>
       <tags>
         <tag>文</tag>
@@ -250,7 +223,7 @@ https://hanyu.baidu.com/shici/detail?pid=ecb82707a98c418995c5a0c50b770af0</p>
 <p></font></p>
 <h1 id="白头吟">白头吟</h1>
 <p>时间一长，司马相如身边又是莺莺燕燕。卓姐姐也懒得说啥，作《白头吟》，附《诀别诗》。</p>
-<p><font face="千图笔锋手写体" size=5></p>
+<p><font face="千图笔锋手写体,仿宋" size=5></p>
 <blockquote>
 <p>皑如山上雪，皎若云间月。<br />
 闻君有两意，故来相决绝。<br />
@@ -277,6 +250,48 @@ https://hanyu.baidu.com/shici/detail?pid=ecb82707a98c418995c5a0c50b770af0</p>
 <li id="fn2" role="doc-endnote"><p>躞蹀，xiè dié，徘徊。<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3" role="doc-endnote"><p>嫋嫋，niao，三声，同“袅袅”，柔弱。簁簁，shāi shāi，“筛”古体字，鱼跃/色白貌。在中国歌谣里钓鱼是男女求偶的象征隐语，这里用隐语表示男女相爱的幸福。<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4" role="doc-endnote"><p>瞀，mào，眼睛昏花。<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+]]></content>
+      <tags>
+        <tag>文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>子虚赋</title>
+    <url>/2022/04/25/%E5%AD%90%E8%99%9A%E8%B5%8B/</url>
+    <content><![CDATA[<p>参考链接：<br />
+&gt; https://baike.baidu.com/item/%E5%AD%90%E8%99%9A%E8%B5%8B/574083</p>
+<span id="more"></span>
+<p><font face="千图笔锋手写体,仿宋" size=5></p>
+<blockquote>
+<p>楚使子虚使于齐，王悉发车骑，与使者出田<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>。田罢，子虚过奼乌有先生<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>，忘是公在焉。坐定，乌有先生问曰：“今日田乐乎？”子虚曰：“乐。”“获多乎？”曰：“少。”“然则何乐？”对曰：“仆乐齐王之欲夸仆以车骑之众，而仆对以云梦之事也。”曰：“可得闻乎？”</p>
+</blockquote>
+<blockquote>
+<p>子虚曰：“可。王车驾千乘，选徒万骑，田于海滨。列卒满泽，罘罔弥山<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>，掩兔辚鹿<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>，射麋脚麟<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>。骛于盐浦<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>，割鲜染轮。射中获多，矜而自功。顾谓仆曰：‘楚亦有平原广泽游猎之地饶乐若此者乎？楚王之猎孰与寡人乎？’仆下车对曰：‘臣，楚国之鄙人也，幸得宿卫十有余年，时从出游，游于后园，览于有无，然犹未能遍睹也，又焉足以言其外泽者乎！’齐王曰：‘虽然，略以子之所闻见而言之。’”</p>
+</blockquote>
+<blockquote>
+<p>“仆对曰：‘唯唯。臣闻楚有七泽，尝见其一，未睹其余也。臣之所见，盖特其小小耳者，名曰云梦。云梦者，方九百里，其中有山焉。其山则盘纡茀郁<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>，隆崇嵂崒<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>，；岑崟参差<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>，日月蔽亏；交错纠纷，上干青云；罢池陂陀<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>，下属江河<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>。其土则丹青赭垩<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>，雌黄白坿，锡碧金银，众色炫耀，照烂龙鳞。其石则赤玉玫瑰，琳瑉琨吾<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>，瑊玏玄厉<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>，堧石娬玞<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a>。’”</p>
+</blockquote>
+<p></font></p>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>田：通“畋”，tián，打猎。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>过：拜访。奼，chà，通“诧”，夸耀，赞扬。<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>罘：fú，捕兔的网。<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>辚：lín，用车轮碾压。<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5" role="doc-endnote"><p>麟：雄鹿。<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6" role="doc-endnote"><p>骛：纵横奔驰。<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7" role="doc-endnote"><p>茀郁：fú，山势曲折的样子。<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8" role="doc-endnote"><p>隆崇：高耸之状；葎崒：lü，四声，zú，山势高峻险要的样子。<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9" role="doc-endnote"><p>岑崟：yín，山势高峻的样子。<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10" role="doc-endnote"><p>罢池：pí，山坡倾斜的样子。下文“陂（bēi）陀”亦此意。<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11" role="doc-endnote"><p>属：zhu，三声，连接。<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12" role="doc-endnote"><p>赭：zhě，赤土；垩，白土。<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13" role="doc-endnote"><p>琳瑉：mín，一种比玉稍次的石。琨吾：同“琨珸”，即“琨”，《说文》：“琨，石之美者。”<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn14" role="doc-endnote"><p>瑊玏：jiā lè，次于玉的一种石名。玄厉：一种黑色的石头，可以磨刀。<a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn15" role="doc-endnote"><p>堧石：ruan，三声，一种次于玉的石头，“白者如冰，半有赤色”（见《文选》李善注）。娬玞：wu，三声，fú，一种次于玉的美石，质地赤色而有白色斑纹。<a href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 ]]></content>
